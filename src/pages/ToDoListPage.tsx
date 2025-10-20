@@ -17,16 +17,16 @@ export const ToDoListPage = () => {
       text,
       isDone: false
     } ])
-    toast('Новая задача в списке!')
+    toast('Новая задача в списке!',{ position: "bottom-right",autoClose: 1000  })
   }
   const updateToDo = (id:number) => {
     setTodos(todos.map(el => el.id === id?(el.isDone = !el.isDone, el): el))
-    toast("Задача завершена!")
+    toast("Задача завершена!",{ position: "bottom-right",autoClose: 1000  })
 
   }
   const deleteToDo = (id:number) =>{
     setTodos(todos.filter(el => el.id !== id))
-    toast("Задача удалена!")
+    toast("Задача удалена!",{ position: "bottom-right",autoClose: 1000  })
   }
   return (
     <>
