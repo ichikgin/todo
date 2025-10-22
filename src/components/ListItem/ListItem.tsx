@@ -8,7 +8,11 @@ const ListItem = ({ todo }: { todo: iToDo }) => {
       className={`${classes.link} ${
         todo.isDone ? classes.done : classes.notDone
       }`}
+<<<<<<< HEAD
       to={`${todo.id}`}
+=======
+      to={`list/${todo.id}`}
+>>>>>>> b4578835f559752f58fc3de4a43b3a921fc5a06a
     >
       {todo.text}
     </Link>
