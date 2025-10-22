@@ -40,7 +40,7 @@ const router = createBrowserRouter([
     ],
   },
   { path: "*", element: <NotFound /> },
-]);
+], {basename: '/app'});
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
