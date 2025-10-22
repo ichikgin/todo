@@ -2,11 +2,7 @@ import { Outlet } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import Header from "../components/Header/Header";
 
-<<<<<<< HEAD
  const Layout = () => {
-=======
-export const Layout = () => {
->>>>>>> b4578835f559752f58fc3de4a43b3a921fc5a06a
   return (
     <>
       <Helmet>
@@ -22,7 +18,4 @@ export const Layout = () => {
     </>
   );
 };
-<<<<<<< HEAD
 export default Layout
-=======
->>>>>>> b4578835f559752f58fc3de4a43b3a921fc5a06a
