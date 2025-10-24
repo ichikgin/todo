@@ -1,17 +1,11 @@
 import { iToDo } from "../../models/todo-items";
-import classes from "./ListItem.module.scss";
-import { Link } from "react-router-dom";
+import { Item } from "./ListItem.styled";
 
 const ListItem = ({ todo }: { todo: iToDo }) => {
   return (
-    <Link
-      className={`${classes.link} ${
-        todo.isDone ? classes.done : classes.notDone
-      }`}
-      to={`${todo.id}`}
-    >
+    <Item done={todo.isDone} to={`${todo.id}`}>
       {todo.text}
-    </Link>
+    </Item>
   );
 };
 

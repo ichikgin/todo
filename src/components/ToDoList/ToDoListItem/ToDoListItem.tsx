@@ -1,15 +1,30 @@
-import {iToDo} from '../../../models/todo-items'
-import './ToDoListItem.scss'
-const ToDoListItem = (props: {toDoItem: iToDo, deleteToDo: Function, updateToDo: Function}) => {
- const  {text, isDone, id} = props.toDoItem
+import { iToDo } from "../../../models/todo-items";
+import {
+  TodoItemButton,
+  TodoItem,
+  TodoItemControl,
+  TodoSpan,
+} from "./ToDoListItem.styled";
+import check from "../../../assets/images/check.png";
+import uncheck from "../../../assets/images/uncheck.png";
+import trash from "../../../assets/images/trash.png";
+const ToDoListItem = (props: {
+  toDoItem: iToDo;
+  deleteToDo: Function;
+  updateToDo: Function;
+}) => {
+  const { text, isDone, id } = props.toDoItem;
   return (
-    <li  className="todo-list-item__wrapper">
-      <span>{text}</span>
-      <div className="todo-list-item__buttons">
-        <button className="btn-trash" onClick={() => props.deleteToDo(id)}></button>
-        <button className={`btn-${isDone? 'check':'uncheck'}`} onClick = {() => props.updateToDo(id)}></button>
-      </div>
-    </li>
+    <TodoItem>
+      <TodoSpan>{text}</TodoSpan>
+      <TodoItemControl className="todo-list-item__buttons">
+        <TodoItemButton icon={trash} onClick={() => props.deleteToDo(id)} />
+        <TodoItemButton
+          icon={isDone ? check : uncheck}
+          onClick={() => props.updateToDo(id)}
+        />
+      </TodoItemControl>
+    </TodoItem>
   );
 };
 

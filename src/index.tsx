@@ -5,10 +5,11 @@ import { RouterProvider } from "react-router-dom";
 import { store } from "./store";
 import { Provider } from "react-redux";
 
-import "./assets/SCSS/normalize.scss";
-import "./assets/SCSS/style.scss";
+
+
 
 import router from "./router";
+import { GlobalStyle } from "./styles/GlobalStyle";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -17,6 +18,7 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <HelmetProvider>
+        <GlobalStyle/>
         <RouterProvider router={router} />
       </HelmetProvider>
     </Provider>
