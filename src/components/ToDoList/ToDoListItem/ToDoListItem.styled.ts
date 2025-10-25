@@ -11,7 +11,8 @@ export const TodoItem = styled.li`
   display: flex;
   justify-content: space-between;
 
-  background: #fff;
+  transition: background-color 0.2s;
+  background-color: ${({ theme }) => theme.color.backgroundItems};
   border-radius: 5px;
   position: relative;
   box-shadow: 0 1px 2px rgba(44, 62, 80, 0.1);
@@ -22,7 +23,7 @@ export const TodoItem = styled.li`
     margin: 0;
   }
 `;
-export const TodoSpan = styled.span``
+export const TodoSpan = styled.span``;
 export const TodoItemControl = styled.div`
   width: 100px;
   height: 50px;

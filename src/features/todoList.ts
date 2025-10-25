@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { iToDo } from '../models/todo-items'
-
+import { v4 as uuidv4 } from 'uuid';
 export interface TodoState {
   todos: iToDo[]
 }
@@ -15,7 +15,7 @@ export const todoSlice = createSlice({
   reducers: {
     createAction: ({todos}, {payload}) => {
        return{
-        todos:[...todos, { id: todos.length + 1, text:payload, isDone: false }]
+        todos:[...todos, { id:uuidv4() , text:payload, isDone: false }]
        };
       
     },

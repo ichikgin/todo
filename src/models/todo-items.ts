@@ -1,6 +1,6 @@
 
 export interface iToDo{
-  id:number,
+  id:string,
   text:string,
   isDone: boolean
 }

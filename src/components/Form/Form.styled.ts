@@ -7,8 +7,8 @@ export const FormWrapper = styled.div`
   position: relative;
   padding: 15px;
   z-index: 5;
-
-  background-color: #4682b4;
+  transition: background-color 0.2s;
+  background-color: ${({ theme }) => theme.color.backgroundSecondary};
   box-shadow: 0 2px 4px rgba(44, 62, 80, 0.15);
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
@@ -21,7 +21,7 @@ export const FormLabel = styled.label``;
 export const FormInput = styled.input`
   width: 100%;
   height: 50px;
-  color: #fff;
+  color: black;
   font-size: 15px;
   font-weight: 400;
   text-indent: 18px;
@@ -32,11 +32,10 @@ export const FormInput = styled.input`
   box-shadow: none;
   outline: none;
 `;
-export const FormButton = styled.button<{icon:string}>`
+export const FormButton = styled.button<{ icon: string }>`
   width: 50px;
   height: 50px;
-  background: transparent url(${props => props.icon}) no-repeat
-    center/cover;
+  background: transparent url(${(props) => props.icon}) no-repeat center/cover;
   position: absolute;
   top: 15px;
   right: 15px;
